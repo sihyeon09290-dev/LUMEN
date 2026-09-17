@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1700">
+    <!-- 브라우저 뷰포트 너비를 1360px로 고정하여 페이지를 그리도록 설정 -->
+    <title>LUMEN</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- webfont 연결-->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/qry0poy.css">
+
+    <!-- font-family: Pretendard, sans-serif;  -->
+    <!-- font-family: "athena", sans-serif;-->
+
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+
+
+    <!-- 외부 css 연결 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!-- OPENING -->
+        <div id="opening">
+            <video id="opening_video" autoplay muted playsinline>
+                <source src="./lumen opening.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div id="banner">
+
+            <!-- Swiper -->
+            <div class="swiper main_banner">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide_flex">
+                        <div class="logo_box"> <!-- 첫번째 배너 -->
+                            <img src="./images/common/logo_black.svg" alt="logo">
+                            <p>Walk Toward Your Light.</p>
+                        </div>
+
+                        <div class="img_box">
+                            <img src="./images/main/main_banner_01.jpg" alt="main_bg_01">
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="./images/main/main_banner_02.jpg" alt="main_bg_04">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="./images/main/main_banner_03.jpg" alt="main_bg_02">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="./images/main/main_banner_04.jpg" alt="main_bg_03">
+                    </div>
+
+                    <div class="swiper-slide slide_flex">
+                        <div class="logo_box"> <!-- 마지막 배너 -->
+                            <img src="./images/common/logo_black.svg" alt="logo">
+                            <p>Walk Toward Your Light.</p>
+                        </div>
+
+                        <div class="img_box">
+                            <img src="./images/main/main_banner_05.jpg" alt="main_bg_05">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="header">
+            <h1 class="logo">
+                <img src="./images/common/logo_black.svg" alt="main_logo">
+            </h1>
+
+            <ul class="nav">
+                <li>
+                    <a href="#">Brand Story</a>
+                </li>
+                <li>
+                    <a href="#">Shop</a>
+                </li>
+                <li>
+                    <a href="#">Accessories</a>
+                </li>
+                <li>
+                    <a href="#">Lumen Care</a>
+                </li>
+                <li>
+                    <a href="#">Store</a>
+                </li>
+                <li>
+                    <a href="#">Lookbook</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div id="brand_wrap">
+            <div class="brand">
+                <h2 class="brand_tit">
+                    <img src="./images/brand/brand_comment.png" alt="브랜드 타이틀">
+                </h2>
+                <p class="brand_txt">
+                    빛은 누군가를 비추는 것이 아니라, <br>
+                    자신만의 방향을 찾는 것입니다. <br>
+                    “당신의 빛을 향해 걸어가세요.”
+                </p>
+            </div>
+
+            <div class="brand_img">
+                <img src="./images/brand/brand_img_wrap.png" alt="shoes">
+            </div>
+
+            <div class="product_info">
+                <p>STARBURST SYMBOL
+                    <br>측면의 별 모양 심볼
+                </p>
+                <p>
+                    PREMIUM LEATHER
+                    <br> 부드럽고 내구성 있는 프리미엄 가죽
+                </p>
+                <p>
+                    GEOMETRIC OUTSOLE <br>
+                    빛이 퍼지는 구조에서 영감을 받은 기하학적 아웃솔
+                </p>
+            </div>
+
+            <div class="discover">
+                <a href="#">
+                    <p>DISCOVER LUMEN</p>
+                    <img src="./images/common/arrow.svg" alt="화살표">
+                </a>
+            </div>
+        </div>
+
+
+        <section class="shop">
+            <h2 class="shop_title">Shop</h2>
+            <!-- Swiper -->
+            <div class="swiper shop_slider_swiper">
+
+                <div class="swiper-wrapper shop_swiper">
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/FORM_01_warm_ivory.jpg" alt="로퍼01">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN FORM 01</p>
+                                <span>120,000</span>
+                            </div>
+                            <ul class="color_chip">
+                                <!-- 컬러칩 컨테이너 추가 -->
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #21201D;"
+                                        data-image="./images/shop/FORM_01_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/FORM_01_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A65F43;"
+                                        data-image="./images/shop/FORM_01_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/FORM_01_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/FORM_01_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip  active" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/FORM_01_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/LINE_01_terracotta_brown.jpg" alt="메리제인01">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN LINE 01</p>
+                                <span>150,000</span>
+                            </div>
+                            <ul class="color_chip">
+                                <!-- 컬러칩 컨테이너 추가 -->
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip " style="background-color: #21201D;"
+                                        data-image="./images/shop/LINE_01_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/LINE_01_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #A65F43;"
+                                        data-image="./images/shop/LINE_01_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/LINE_01_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/LINE_01_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/LINE_01_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/ARC_02_black.jpg" alt="스니커즈02">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN ARC 02</p>
+                                <span>160,000</span>
+                            </div>
+                            <ul class="color_chip">
+                                <!-- 컬러칩 컨테이너 추가 -->
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #21201D;"
+                                        data-image="./images/shop/ARC_02_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/ARC_02_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A65F43;"
+                                        data-image="./images/shop/ARC_02_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/ARC_02_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/ARC_02_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/ARC_02_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/CORE_03_black.jpg" alt="첼시부츠03">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN CORE 03</p>
+                                <span>165,000</span>
+                            </div>
+                            <ul class="color_chip">
+                                <!-- 컬러칩 컨테이너 추가 -->
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #21201D;"
+                                        data-image="./images/shop/CORE_03_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/CORE_03_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A65F43;"
+                                        data-image="./images/shop/CORE_03_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/CORE_03_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/CORE_03_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/CORE_03_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/PAY_01_warm_ivory.jpg" alt="플랫슈즈01">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN PAY 01</p>
+                                <span>120,000</span>
+                            </div>
+                            <ul class="color_chip">
+                                <!-- 컬러칩 컨테이너 추가 -->
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #21201D;"
+                                        data-image="./images/shop/PAY_01_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/PAY_01_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A65F43;"
+                                        data-image="./images/shop/PAY_01_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/PAY_01_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/PAY_01_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/PAY_01_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/FLOW_02.jpg" alt="샌들02">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN FLOW 02</p>
+                                <span>130,000</span>
+                            </div>
+                            <ul class="color_chip">
+                                <!-- 컬러칩 컨테이너 추가 -->
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #21201D;"
+                                        data-image="./images/shop/FLOW_02_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/FLOW_02_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #A65F43;"
+                                        data-image="./images/shop/FLOW_02_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/FLOW_02_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/FLOW_02_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/FLOW_02_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/ARC_01_black.jpg" alt="스니커즈01">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN ARC 01</p>
+                                <span>180,000</span>
+                            </div>
+                            <ul class="color_chip">
+                                <!-- 컬러칩 컨테이너 추가 -->
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #21201D;"
+                                        data-image="./images/shop/ARC_01_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/ARC_01_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A65F43;"
+                                        data-image="./images/shop/ARC_01_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/ARC_01_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/ARC_01_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/ARC_01_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/LINE_02_warm_ivory.jpg" alt="메리제인02">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN LINE 02</p>
+                                <span>130,000</span>
+                            </div>
+                            <ul class="color_chip">
+                                <!-- 컬러칩 컨테이너 추가 -->
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #21201D;"
+                                        data-image="./images/shop/LINE_02_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/LINE_02_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A65F43;"
+                                        data-image="./images/shop/LINE_02_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/LINE_02_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/LINE_02_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/LINE_02_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/CORE_01_warm_ivory.jpg" alt="첼시부츠01">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN CORE 01</p>
+                                <span>150,000</span>
+                            </div>
+                            <ul class="color_chip">
+                                <!-- 컬러칩 컨테이너 추가 -->
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #21201D;"
+                                        data-image="./images/shop/CORE_01_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/CORE_01_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A65F43;"
+                                        data-image="./images/shop/CORE_01_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/CORE_01_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/CORE_01_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/CORE_01_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/FLOW_01_terracotta_brown.jpg" alt="샌들01">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN FLOW 01</p>
+                                <span>100,000</span>
+                            </div>
+                            <ul class="color_chip">
+                                <!-- 컬러칩 컨테이너 추가 -->
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #21201D;"
+                                        data-image="./images/shop/FLOW_01_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/FLOW_01_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #A65F43;"
+                                        data-image="./images/shop/FLOW_01_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/FLOW_01_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/FLOW_01_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/FLOW_01_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/ARC_03_olive_green.jpg" alt="스니커즈03">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN ARC 01</p>
+                                <span>180,000</span>
+                            </div>
+                            <ul class="color_chip">
+                                <!-- 컬러칩 컨테이너 추가 -->
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #21201D;"
+                                        data-image="./images/shop/ARC_03_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #687052;"
+                                        data-image="./images/shop/ARC_03_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A65F43;"
+                                        data-image="./images/shop/ARC_03_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/ARC_03_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/ARC_03_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/ARC_03_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/FORM_02_black.jpg" alt="로퍼02">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN FORM 02</p>
+                                <span>150,000</span>
+                            </div>
+                            <ul class="color_chip">
+                                <!-- 컬러칩 컨테이너 추가 -->
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #21201D;"
+                                        data-image="./images/shop/FORM_02_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/FORM_02_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A65F43;"
+                                        data-image="./images/shop/FORM_02_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/FORM_02_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/FORM_02_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/FORM_02_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/PAY_02_terracotta_brown.jpg" alt="플랫슈즈02">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN PAY 02</p>
+                                <span>130,000</span>
+                            </div>
+                            <!-- 컬러칩 컨테이너 추가 -->
+                            <!-- 블랙 -->
+                            <ul class="color_chip">
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #21201D;"
+                                        data-image="./images/shop/PAY_02_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/PAY_02_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #A65F43;"
+                                        data-image="./images/shop/PAY_02_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/PAY_02_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/PAY_02_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/PAY_02_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/CORE_02_black.jpg" alt="첼시부츠02">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN CORE 02</p>
+                                <span>170,000</span>
+                            </div>
+                            <ul class="color_chip">
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #21201D;"
+                                        data-image="./images/shop/CORE_02_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/CORE_02_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A65F43;"
+                                        data-image="./images/shop/CORE_02_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A99A86;"
+                                        data-image="./images/shop/CORE_02_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/CORE_02_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/CORE_02_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shop_item swiper-slide">
+                        <div class="shop_img">
+                            <img class="product_img" src="./images/shop/FLOW_03_taupe_beige.jpg" alt="샌들03">
+                            <button class="heart">
+                                <img src="./images/common/shop_icon01.svg" alt="하트 아이콘">
+                            </button>
+                        </div>
+
+                        <div class="shop_info">
+                            <div class="shop_text">
+                                <p>LUMEN FLOW 03</p>
+                                <span>140,000</span>
+                            </div>
+                            <!-- 컬러칩 컨테이너 추가 -->
+                            <ul class="color_chip">
+                                <!-- 블랙 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #21201D;"
+                                        data-image="./images/shop/FLOW_03_black.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 올리브 그린 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #687052;"
+                                        data-image="./images/shop/FLOW_03_olive_green.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 테라코타 브라운 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #A65F43;"
+                                        data-image="./images/shop/FLOW_03_terracotta_brown.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 토프 베이지 -->
+                                <li>
+                                    <button type="button" class="chip active" style="background-color: #A99A86;"
+                                        data-image="./images/shop/FLOW_03_taupe_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 샌드 베이지 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #D8C5A8;"
+                                        data-image="./images/shop/FLOW_03_sand_beige.jpg">
+                                    </button>
+                                </li>
+
+                                <!-- 웜 아이보리 크림 -->
+                                <li>
+                                    <button type="button" class="chip" style="background-color: #F3EBDD;"
+                                        data-image="./images/shop/FLOW_03_warm_ivory.jpg">
+                                    </button>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+
+
+        <!-- accessories -->
+        <!-- 섹션 타이틀 -->
+        <div id="accessories_section">
+            <div class="inner_wrap">
+                <h2 class="section-title">Accessories</h2>
+                <!-- 상품 그리드 컨테이너 -->
+                <div class="product-grid">
+
+                    <!-- 상품 1: SOCKS -->
+                    <div class="product-item">
+                        <div class="image-wrapper">
+                            <img src="./images/shop/socks.jpg" alt="SOCKS"> <!-- 이미지 경로 설정 -->
+                            <!-- 옵션 버튼들 (블랙, 아이보리, 그레이, 버건디) -->
+                            <div class="options-overlay socks-options">
+                                <button class="opt-btn" data-color="black">블랙</button>
+                                <button class="opt-btn" data-color="ivory">아이보리</button>
+                                <button class="opt-btn" data-color="gray">그레이</button>
+                                <button class="opt-btn" data-color="burgundy">버건디</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-name">SOCKS</span>
+                            <span class="product-price">12,000</span>
+                        </div>
+                    </div>
+
+                    <!-- 상품 2: INSOL -->
+                    <div class="product-item">
+                        <div class="image-wrapper">
+                            <img src="./images/shop/insol.jpg" alt="INSOL">
+                            <div class="options-overlay">
+                                <button class="opt-btn" data-color="black">블랙</button>
+                                <button class="opt-btn" data-color="ivory">아이보리</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-name">INSOL</span>
+                            <span class="product-price">25,000</span>
+                        </div>
+                    </div>
+
+                    <!-- 상품 3: SHOE BAG -->
+                    <div class="product-item">
+                        <div class="image-wrapper">
+                            <img src="./images/shop/shoebag.jpg" alt="SHOE BAG">
+                            <div class="options-overlay">
+                                <button class="opt-btn" data-color="black">블랙</button>
+                                <button class="opt-btn" data-color="ivory">아이보리</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-name">SHOE BAG</span>
+                            <span class="product-price">40,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- =========== lumen care ================ -->
+        <div id="lumen_care_wrap">
+            <div class="lumen-care-wrapper">
+
+                <!-- 왼쪽 고정 영역 (대표 상품) -->
+                <div class="lumen-care-left">
+                    <h2 class="section-title">LUMEN CARE</h2>
+                    <div class="lumen-care-sticky">
+                        <div class="lumen-care-card">
+                            <div class="lumen-care-img-box">
+                                <img src="./images/shop/lumencare.jpg" alt="올인원 관리 키트">
+                            </div>
+                            <div class="lumen-care-info">
+                                <span class="lumen-care-name">올인원 관리 키트</span>
+                                <span class="lumen-care-price">50,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 오른쪽 스크롤 영역 (작은 상품들) -->
+                <div class="lumen-care-right">
+
+                    <!-- 작은 상품 1 -->
+                    <div class="lumen-care-card">
+                        <div class="lumen-care-img-box">
+                            <img src="images/shop/lumencare_03.jpg" alt="탈취 스프레이">
+                        </div>
+                        <div class="lumen-care-info">
+                            <span class="lumen-care-name">탈취 스프레이</span>
+                            <span class="lumen-care-price">18,000</span>
+                        </div>
+                    </div>
+
+                    <!-- 작은 상품 2 -->
+                    <div class="lumen-care-card">
+                        <div class="lumen-care-img-box">
+                            <img src="./images/shop/lumencare_01.jpg" alt="오염 제거 전용 클리너">
+                        </div>
+                        <div class="lumen-care-info">
+                            <span class="lumen-care-name">오염 제거 전용 클리너</span>
+                            <span class="lumen-care-price">20,000</span>
+                        </div>
+                    </div>
+
+                    <!-- 작은 상품 3 -->
+                    <div class="lumen-care-card">
+                        <div class="lumen-care-img-box">
+                            <img src="./images/shop/lumencare_02.jpg" alt="방수 스프레이 ">
+                        </div>
+                        <div class="lumen-care-info">
+                            <span class="lumen-care-name">방수 스프레이</span>
+                            <span class="lumen-care-price">18,000</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- =========== LUMEN MESSAGE ================ -->
+        <section class="lumen-message">
+            <div class="lumen-message-track">
+
+                <span>YOUR STEP. YOUR LIGHT.</span>
+                <i>│</i>
+                <span>WALK TOWARD YOUR LIGHT.</span>
+                <i>│</i>
+
+                <span>YOUR STEP. YOUR LIGHT.</span>
+                <i>│</i>
+                <span>WALK TOWARD YOUR LIGHT.</span>
+                <i>│</i>
+
+            </div>
+        </section>
+
+
+
+        <!-- =========== store ================== -->
+        <div id="store_wrap">
+            <section class="store_section">
+
+                <h2 class="section-title">
+                    Store &amp; Franchise
+                </h2>
+
+
+                <div class="store_cards">
+
+
+                    <!-- GWANGALLI -->
+
+                    <article class="store_card active">
+
+                        <div class="store_card_inner">
+
+                            <span class="store_line_top"></span>
+                            <!-- 접혀있을 때 보이는 글자 -->
+                            <span class="store_num_closed">01</span>
+
+                            <div class="store_vertical">
+                                GWANGALLI
+                            </div>
+                            <span class="store_line"></span>
+
+                            <!-- 펼쳐졌을 때 -->
+
+                            <div class="store_content">
+
+                                <img class="store_photo" src="./images/store/gwangalli.jpg" alt="LUMEN Gwangalli store">
+
+
+                                <div class="store_info">
+
+                                    <div>
+
+                                        <div class="store_num">
+                                            01 / STORE
+                                        </div>
+
+
+                                        <h3 class="store_name">
+                                            Gwangalli
+                                        </h3>
+
+
+                                        <p class="store_en">
+                                            BUSAN · GWANGALLI
+                                        </p>
+
+
+                                        <p class="store_desc">
+                                            LUMEN의 메인 쇼룸.<br>
+                                            빛과 건축적 공간 속에서<br>
+                                            브랜드의 디자인을 직접 <br> 경험할 수 있습니다.
+                                        </p>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <p class="store_meta">
+                                            부산광역시 수영구 광안해변로 219<br>
+                                            051-123-4567
+                                        </p>
+
+
+                                        <a href="#" class="store_link">
+                                            VIEW LOCATION
+                                            <span>→</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- NAMPO -->
+
+                    <article class="store_card">
+
+                        <div class="store_card_inner">
+
+                            <span class="store_line_top"></span>
+                            <span class="store_num_closed">02</span>
+                            <div class="store_vertical">
+                                NAMPO
+                            </div>
+                            <span class="store_line"></span>
+
+                            <div class="store_content">
+
+                                <img class="store_photo" src="./images/store/nampo.jpg" alt="LUMEN Nampo store">
+
+
+                                <div class="store_info">
+
+                                    <div>
+
+                                        <div class="store_num">
+                                            02 / STORE
+                                        </div>
+
+                                        <h3 class="store_name">
+                                            Nampo
+                                        </h3>
+
+                                        <p class="store_en">
+                                            BUSAN · NAMPO
+                                        </p>
+
+                                        <p class="store_desc">
+                                            도심 속에서 LUMEN의<br>
+                                            미니멀한 실루엣을 경험하는<br>
+                                            시티 쇼룸입니다.
+                                        </p>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <p class="store_meta">
+                                            부산광역시 중구 남포동<br>
+                                            051-123-4567
+                                        </p>
+
+                                        <a href="#" class="store_link">
+                                            VIEW LOCATION
+                                            <span>→</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!--DAEGU -->
+
+                    <article class="store_card">
+
+                        <div class="store_card_inner">
+
+                            <span class="store_line_top"></span>
+                            <span class="store_num_closed">03</span>
+                            <div class="store_vertical">
+                                DAEGU
+                            </div>
+                            <span class="store_line"></span>
+
+
+                            <div class="store_content">
+
+                                <img class="store_photo" src="./images/store/daegu.jpg" alt="LUMEN Daegu store">
+
+
+                                <div class="store_info">
+
+                                    <div>
+
+                                        <div class="store_num">
+                                            03 / STORE
+                                        </div>
+
+                                        <h3 class="store_name">
+                                            Daegu
+                                        </h3>
+
+                                        <p class="store_en">
+                                            DAEGU · DOWNTOWN
+                                        </p>
+
+                                        <p class="store_desc">
+                                            일상과 스타일 사이에서<br>
+                                            LUMEN의 균형 잡힌 디자인을<br>
+                                            만나볼 수 있는 스토어입니다.
+                                        </p>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <p class="store_meta">
+                                            대구광역시 중구 동성로<br>
+                                            053-123-4567
+                                        </p>
+
+                                        <a href="#" class="store_link">
+                                            VIEW LOCATION
+                                            <span>→</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+        </div>
+
+
+
+        <!-- ============== lookbook ================= -->
+        <div id="lookbook_wrap">
+            <div class="lookbook-container">
+                <!-- 상단 타이틀 및 시즌 버튼 -->
+                <div class="lookbook-header">
+                    <h2 class="look_title">Lookbook</h2>
+                    <div class="season-buttons">
+                        <button class="season-btn active" data-season="spring">봄</button>
+                        <button class="season-btn" data-season="summer">여름</button>
+                        <button class="season-btn" data-season="autumn">가을</button>
+                        <button class="season-btn" data-season="winter">겨울</button>
+                    </div>
+                </div>
+
+                <!-- 메인 콘텐츠 -->
+                <div class="lookbook-content">
+                    <!-- 첫 번째 고정 영상 카드 -->
+                    <div class="main-video-card">
+                        <video id="season-video" autoplay muted loop playsinline>
+                            <source src="./AI 영상/봄 룩북 영상 최종.mp4" type="video/mp4">
+                            브라우저가 비디오를 지원하지 않습니다.
+                        </video>
+                    </div>
+
+                    <!-- 마우스 드래그 가로 스크롤 영역 -->
+                    <div class="cards-scroll-container swiper" id="scrollContainer">
+                        <div class="swiper-wrapper">
+                            <!-- JS로 카드 생성 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- =============== footer ==================== -->
+        <div id="footer_wrap">
+            <div class="footer_section">
+
+                <!-- 좌측 로고 및 정보 영역 -->
+                <div class="footer-left">
+                    <div class="logo-wrapper">
+                        <h1 class="logo">
+                            <a href="#">
+                                <img src="./images/common/logo_black.svg" alt="logo">
+                            </a>
+                        </h1>
+                    </div>
+
+                    <div class="company-info">
+                        <p><span>대표명</span> 김시현</p>
+                        <p><span>전화번호</span> 010 - 1234 - 5678</p>
+                        <p><span>이메일</span> 123456@gmial.com</p>
+                        <p><span>위치</span> 부산광역시 수영구 광안해변로 219 일대</p>
+                    </div>
+                </div>
+
+                <!-- 우측 소셜 링크 영역 -->
+                <div class="footer-right">
+                    <ul class="sns-list">
+                        <li>
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <span class="sns-name">instagram</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.kakaocorp.com/page/" target="_blank">
+                                <span class="sns-name">kakaotalk</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/?app=desktop&hl=ko&gl=KR" target="_blank">
+                                <span class="sns-name">youtube</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- jQuery 오픈소스 연결 -->
+    <script src="./js/jquery-4.0.0.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+
+    <!-- jQuery 파일 연결 -->
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>
