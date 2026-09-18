@@ -804,66 +804,60 @@ body {
 /* =========================
    LUMEN MESSAGE
 ========================= */
+#text_flow {
+    /* position 부모요소/ .swiper의 기준점 */
+    position: relative;
 
-.lumen-message {
-    width: 100%;
+    background-color: #21201d;
+    color: #E9E4DA;
     height: 100px;
     overflow: hidden;
-
-    background-color: #21201D;
-    color: #F4F2ED;
-
-    display: flex;
-    align-items: center;
 }
 
-/* 움직이는 전체 내용 */
-.lumen-message-track {
-    display: flex;
-    align-items: center;
-    gap: 50px;
+#text_flow .swiper {
+    width: 3000px;
+    height: 100%;
 
-    width: max-content;
-    white-space: nowrap;
-
-    animation: lumenMarquee 25s linear infinite;
+    /* position 자식요소 */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* position 가로 가운데 정렬 */
 }
 
-/* 문구 */
-.lumen-message-track span {
+#text_flow .swiper-wrapper {
+    /* css 애니메이션 속도 곡선(속도 변화 방식) */
+    transition-timing-function: linear;
+    /* 일정 속도로 계속 이동 */
+}
+
+#text_flow .swiper-slide {
     font-family: 'Athena Light', sans-serif;
+    text-align: center;
     font-size: 36px;
-    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+
+    position: relative;
+
+    margin-left: 20px;
+    padding-left: 20px;
 }
+#text_flow .swiper-slide::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 25px;
+    background-color: #eab178;
 
-/* YOUR STEP 쪽을 조금 강조 */
-.lumen-message-track span:nth-of-type(1),
-.lumen-message-track span:nth-of-type(3) {
-    font-family: 'Athena Light', sans-serif;
+    position: absolute;
+    top: 38px;
+    left: 0;
 }
-
-/* 띠부분 중간 짝대기 */
-.lumen-message-track i {
-    font-size: 20px;
-    font-style: normal;
-    color: #EAB178;
-}
-
-
-/* =========================
-   움직이는 애니메이션
-========================= */
-
-@keyframes lumenMarquee {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
 
 
 
@@ -1630,6 +1624,5 @@ body {
     opacity: 1;
 
     filter:
-        drop-shadow(0 0 5px rgba(173, 121, 75, 0.4))
-        drop-shadow(0 0 14px rgba(173, 121, 75, 0.4));
+        drop-shadow(0 0 5px rgba(173, 121, 75, 0.4)) drop-shadow(0 0 14px rgba(173, 121, 75, 0.4));
 }

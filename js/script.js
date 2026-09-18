@@ -2,71 +2,71 @@
 // ============================== OPENING ==============================
 // $(function () {
 
-    // const opening = document.getElementById('opening');
-    // const video = document.getElementById('opening_video');
+// const opening = document.getElementById('opening');
+// const video = document.getElementById('opening_video');
 
-    // if (!opening || !video) return;
+// if (!opening || !video) return;
 
-    // let openingEnded = false;
-
-
-    // function closeOpening() {
-
-    //     if (openingEnded) return;
-
-    //     openingEnded = true;
-
-    //     console.log('OPENING CLOSE');
+// let openingEnded = false;
 
 
-        // 영상이 끝난 뒤 잠깐 유지
-    //     setTimeout(function () {
+// function closeOpening() {
 
-    //         $(opening).fadeOut(1000, function () {
+//     if (openingEnded) return;
 
-    //             opening.remove();
+//     openingEnded = true;
 
-    //             console.log('OPENING REMOVED');
-
-    //         });
-
-    //     }, 300);
-
-    // }
+//     console.log('OPENING CLOSE');
 
 
-    // 영상이 완전히 끝났을 때
-    // video.addEventListener('ended', function () {
+// 영상이 끝난 뒤 잠깐 유지
+//     setTimeout(function () {
 
-    //     console.log('VIDEO ENDED');
+//         $(opening).fadeOut(1000, function () {
 
-    //     closeOpening();
+//             opening.remove();
 
-    // });
+//             console.log('OPENING REMOVED');
 
+//         });
 
-    // 영상 오류
-    // video.addEventListener('error', function () {
+//     }, 300);
 
-    //     console.log('VIDEO ERROR');
-
-    //     closeOpening();
-
-    // });
+// }
 
 
-    // 영상 재생
-    // video.play().then(function () {
+// 영상이 완전히 끝났을 때
+// video.addEventListener('ended', function () {
 
-    //     console.log('VIDEO PLAYING');
+//     console.log('VIDEO ENDED');
 
-    // }).catch(function (error) {
+//     closeOpening();
 
-    //     console.log('VIDEO PLAY ERROR:', error);
+// });
 
-    //     closeOpening();
 
-    // });
+// 영상 오류
+// video.addEventListener('error', function () {
+
+//     console.log('VIDEO ERROR');
+
+//     closeOpening();
+
+// });
+
+
+// 영상 재생
+// video.play().then(function () {
+
+//     console.log('VIDEO PLAYING');
+
+// }).catch(function (error) {
+
+//     console.log('VIDEO PLAY ERROR:', error);
+
+//     closeOpening();
+
+// });
 
 // });
 
@@ -77,8 +77,8 @@ $(function () {
         slidesPerView: 1,
         loop: true,
         autoplay: {
-           delay: 2000,
-           disableOnInteraction: false,
+            delay: 2000,
+            disableOnInteraction: false,
         },
         speed: 800,
     });
@@ -163,16 +163,16 @@ document.querySelectorAll('.color_chip').forEach(function (colorGroup) {
 
 });
 
-document.querySelectorAll('.shop_item').forEach(function(item) {
+document.querySelectorAll('.shop_item').forEach(function (item) {
 
     const productImg = item.querySelector('.product_img');
     const chips = item.querySelectorAll('.color_chip .chip');
 
-    chips.forEach(function(chip) {
+    chips.forEach(function (chip) {
 
-        chip.addEventListener('click', function() {
+        chip.addEventListener('click', function () {
 
-            chips.forEach(function(chip) {
+            chips.forEach(function (chip) {
                 chip.classList.remove('active');
             });
 
@@ -214,42 +214,42 @@ careImages.forEach((image) => {
 
 /* =========================  STORE CARD JS  ========================= */
 
-                const cards = document.querySelectorAll(".store_card");
+const cards = document.querySelectorAll(".store_card");
 
 
-                cards.forEach(card => {
+cards.forEach(card => {
 
 
-                    /* 마우스를 올렸을 때 */
+    /* 마우스를 올렸을 때 */
 
-                    card.addEventListener("mouseenter", () => {
+    card.addEventListener("mouseenter", () => {
 
-                        cards.forEach(item => {
+        cards.forEach(item => {
 
-                            item.classList.remove("active");
+            item.classList.remove("active");
 
-                        });
+        });
 
-                        card.classList.add("active");
+        card.classList.add("active");
 
-                    });
+    });
 
 
-                    /* 클릭했을 때 */
+    /* 클릭했을 때 */
 
-                    card.addEventListener("click", () => {
+    card.addEventListener("click", () => {
 
-                        cards.forEach(item => {
+        cards.forEach(item => {
 
-                            item.classList.remove("active");
+            item.classList.remove("active");
 
-                        });
+        });
 
-                        card.classList.add("active");
+        card.classList.add("active");
 
-                    });
+    });
 
-                });
+});
 
 
 
@@ -260,7 +260,7 @@ careImages.forEach((image) => {
 const lookbookData = {
 
     spring: {
-        video: "./AI 영상/봄 룩북 영상 최종.mp4",
+        video: "./ai_video/spring_lookbook_video.mp4",
 
         items: [
             { img: "./images/lookbook/spring_02.jpg" },
@@ -274,7 +274,7 @@ const lookbookData = {
 
 
     summer: {
-        video: "./ai 영상/여름 룩북 영상 최종.mp4",
+        video: "./ai_video/summer_lookbook_video.mp4",
 
         items: [
             { img: "./images/lookbook/summer_02.jpg" },
@@ -288,7 +288,7 @@ const lookbookData = {
 
 
     autumn: {
-        video: "./ai 영상/가을 룩북 영상 최종.mp4",
+        video: "./ai_video/autumn_lookbook_video.mp4",
 
         items: [
             { img: "./images/lookbook/fall_02.jpg" },
@@ -302,7 +302,7 @@ const lookbookData = {
 
 
     winter: {
-        video: "./ai 영상/겨울 룩북 영상 최종.mp4",
+        video: "./ai_video/winter_lookbook_video.mp4",
 
         items: [
             { img: "./images/lookbook/winter_02.jpg" },
@@ -366,7 +366,7 @@ function updateLookbook(season) {
 
     videoElement.load();
 
-    videoElement.play().catch(() => {});
+    videoElement.play().catch(() => { });
 
 
     // ==========================
@@ -475,3 +475,45 @@ seasonBtns.forEach(btn => {
 // ==============================
 
 updateLookbook('spring');
+
+
+
+// text_flow
+var swiper = new Swiper(".lumen_message", {
+    slidesPerView: 6,
+    spaceBetween: 0,
+    loop: true,
+    allowTouchMove: false, // 사용자가 슬라이드를 손이나 마우스로 드래그 못 하게 막는 설정
+    //autoplay: {
+    //    delay: 0,
+    //    disableOnInteraction: false,
+    //},
+    speed: 5000, // 슬라이드가 넘어가는데 걸리는 시간
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
