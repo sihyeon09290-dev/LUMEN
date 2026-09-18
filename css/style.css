@@ -836,16 +836,19 @@ body {
     font-family: 'Athena Light', sans-serif;
     text-align: center;
     font-size: 36px;
+    line-height: 1;
+
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 1;
-
+    
     position: relative;
 
-    margin-left: 20px;
-    padding-left: 20px;
+    margin: 0;
+    padding: 0 40px; /* 문구와 짝대기 사이 간격 */
+    width: auto !important;
+    flex-shrink: 0;
 }
 #text_flow .swiper-slide::after {
     content: "";

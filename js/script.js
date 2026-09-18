@@ -480,15 +480,15 @@ updateLookbook('spring');
 
 // text_flow
 var swiper = new Swiper(".lumen_message", {
-    slidesPerView: 6,
+    slidesPerView: "auto",
     spaceBetween: 0,
     loop: true,
     allowTouchMove: false, // 사용자가 슬라이드를 손이나 마우스로 드래그 못 하게 막는 설정
-    //autoplay: {
-    //    delay: 0,
-    //    disableOnInteraction: false,
-    //},
-    speed: 5000, // 슬라이드가 넘어가는데 걸리는 시간
+    autoplay: {
+       delay: 0,
+       disableOnInteraction: false,
+    },
+    speed: 7000, // 슬라이드가 넘어가는데 걸리는 시간
 });
 
 
