@@ -89,23 +89,24 @@ $(function () {
 // --------------------- .product_info
 const productInfo = document.querySelector('.product_info');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+if (productInfo) {
 
-        if (entry.isIntersecting) {
-            productInfo.classList.add('active');
-        } else {
-            productInfo.classList.remove('active');
-        }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
 
+            if (entry.isIntersecting) {
+                productInfo.classList.add('active');
+            } else {
+                productInfo.classList.remove('active');
+            }
+
+        });
+    }, {
+        threshold: 0.3
     });
-}, {
-    threshold: 0.3
-});
 
-observer.observe(productInfo);
-
-
+    observer.observe(productInfo);
+}
 //----------------------- header 
 const header = document.querySelector('.header');
 
