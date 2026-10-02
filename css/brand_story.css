@@ -95,108 +95,1195 @@ body {
 }
 
 
-
-/* ==========================================
-   BRAND STORY - INTRO & HEADER STYLES
-========================================== */
-
-/* 1. 인트로 섹션 (총 높이 3000px로 스크롤 구간 설정) */
-.story_intro_section {
-    position: relative;
-    height: 900px; 
-    background-color: #21201d;
-}
-
-/* 스크롤되는 동안 화면(1080px)에 고정될 래퍼 */
-.story_sticky_wrap {
-    position: sticky;
+/* =========== opening ==================== */
+#opening {
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    height: 1080px; /* 화면 전체 높이를 px로 고정 */
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    height: 100vh;
+    z-index: 10000;
+    background: #F4F2ED;
 }
 
-/* 2. 카드 형태 이미지 컨테이너 (가로로 카드들을 나열) */
-.story_img_container {
-    position: relative;
+#opening video {
     width: 100%;
-    height: 990px; /* 전체 1080px - 하단바 90px */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* 카드와 카드 사이 간격 */
-    padding: 0 40px;
-}
-
-/* 개별 카드 이미지 스타일 (시안처럼 세로로 착착 나열되는 카드 형태) */
-.story_slide {
-    position: relative;
-    width: 22%; /* 4장이 가로로 나란히 들어가도록 비율 설정 */
-    height: 690px; /* 카드의 고정 높이 (px) */
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    opacity: 0.2; /* 평소에는 어둡게(비활성) */
-    transform: translateY(30px); /* 아래에서 살짝 위로 올라오는 효과 준비 */
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* 스크롤에 따라 순차적으로 활성화(착착착 나타남)되는 카드 */
-.story_slide.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* 3. 사진 바로 밑 하단 바 (높이 90px 고정) */
-.story_bottom_bar {
-    width: 100%;
-    height: 90px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 60px;
-    background: #f7f5f0;
-    z-index: 10;
-}
-
-.brand_title_mini {
-    font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: 500;
-    color: #21201D;
-}
-
-.counter_wrap {
-    font-size: 22px;
-    font-family: serif;
-    letter-spacing: 1px;
-    color: #21201D;
-}
-
-.bottom_logo img {
-    height: 16px;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
-/* 4. 오프닝 이후 이어지는 일반 스토리 본문 섹션 */
+/* ==========================================
+   OPENING
+========================================== */
+
+#opening {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 10000;
+
+    background: #F4F2ED;
+}
+
+
+#opening video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ==========================================
+   BRAND STORY INTRO
+========================================== */
+
+.story_intro_section {
+    position: relative;
+
+    width: 100%;
+    height: 1000px;
+
+    background-color: #21201d;
+}
+
+
+.story_sticky_wrap {
+    position: relative;
+
+    width: 100%;
+    height: 1000px;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   CARD CONTAINER
+========================================== */
+
+.story_img_container {
+    position: absolute;
+
+    left: 0;
+    top: 140px;
+
+    width: 100%;
+    height: 680px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    /*
+        카드가 자기 자리에서 회전할 때
+        원근감이 너무 강하지 않도록 설정
+    */
+    perspective: 1600px;
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.story_slide {
+
+    position: relative;
+
+    flex: 1;
+
+    height: 680px;
+
+    min-width: 0;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    /*
+        AOS가 적용되기 전 상태
+    */
+
+    opacity: 0;
+
+    transform:
+        rotateY(-55deg) rotateZ(-3deg) scale(0.97);
+
+    transform-origin: center center;
+
+    /*
+        핵심
+        transform + opacity만 transition
+    */
+
+    transition-property:
+        transform,
+        opacity;
+
+    /*
+        기본 속도
+        각각 data-aos-duration로 덮어씀
+    */
+
+    transition-duration: 1800ms;
+
+    /*
+        부드러운 감속
+    */
+
+    transition-timing-function:
+        cubic-bezier(0.16, 1, 0.3, 1);
+
+    will-change:
+        transform,
+        opacity;
+
+    backface-visibility: hidden;
+}
+
+
+/* ==========================================
+   AOS ACTIVE
+========================================== */
+
+[data-aos="lumen-rotate"].aos-animate {
+
+    opacity: 1;
+
+    transform:
+        rotateY(0deg) rotateZ(0deg) scale(1);
+}
+
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.bottom_logo {
+
+    position: absolute;
+
+    top: 880px;
+    right: 50px;
+}
+
+
+.bottom_logo img {
+
+    display: block;
+
+    width: auto;
+    height: auto;
+}
+
+
+
+/* ==================== header ============== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 95px;
+
+    background-color: #21201d;
+
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.header.header_show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.logo {
+    margin: 120px;
+}
+
+.nav {
+    display: flex;
+    gap: 50px;
+    margin-right: 180px;
+}
+
+.nav li a {
+    display: block;
+    font-weight: 500;
+    position: relative;
+    color: #F4F2ED;
+    transition: 0.35s ease;
+}
+
+.nav li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 1px;
+    background: #AD794B;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px rgba(234, 177, 120, 0.7);
+    transition: width 0.35s ease;
+}
+
+.nav li a:hover {
+    color: #AD794B;
+    text-shadow: 0 0 8px rgba(234, 177, 120, 0.35);
+}
+
+.nav li a:hover::after {
+    width: 100%;
+}
+
+
+
+
+/* ============ 콘텐츠 시작 ================== */
+
 .story_text_section {
-    padding: 160px 0;
-    background: #ffffff;
+    position: relative;
+    width: 100%;
+    height: 900px;
+    min-height: 700px;
+    overflow: hidden;
+    color: #F4F2ED;
+}
+
+
+/* 배경 */
+.story_bg {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url(../images/brand/background_img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.story_bg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.inner {
+    position: relative;
+
+    max-width: 1320px;
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.story_logo img {
+    display: block;
+    width: 250px;
+    height: 200px;
+    margin: 0 auto;
+
+    /* 검정 로고 + 은은한 외부광선 */
+    filter:
+        drop-shadow(0 0 4px rgba(250, 250, 250, 0.8)) drop-shadow(0 0 12px rgba(243, 191, 136, 0.8));
+}
+
+
+/* =========================================
+   RIGHT CONTENT
+========================================= */
+
+.story_content {
+    width: 50%;
+}
+
+
+/* 제목 */
+
+.story_content h2 {
+
+    font-family: "athena", sans-serif;
+    font-size: 50px;
+    font-weight: 200;
+    line-height: 1.5;
+
+    color: #F4F2ED;
+}
+
+
+/* 선 */
+
+.story_line {
+    width: 60px;
+    height: 1px;
+    background-color: #EAB178;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+
+/* 설명 */
+
+.story_description {
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.5;
+
+    color: #F4F2ED;
+}
+
+.story_description p {
+    margin: 0 0 18px;
+}
+
+.story_description p:last-child {
+    margin-bottom: 0;
+}
+
+
+.story_text_section {
+    min-height: 700px;
+}
+
+.story_text_section>.inner {
+    width: 85%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story_logo {
+    width: 100%;
+}
+
+.story_content {
+    width: 90%;
+    max-width: none;
+}
+
+
+
+/* ================== 컨텐츠 2 ==================== */
+.story_intro {
+    position: relative;
+    height: 1080px;
+    overflow: hidden;
+    background-color: #E9E4DA;
+}
+
+
+/* ==================================================
+   STORY INTRO INNER
+================================================== */
+
+.story_intro_inner {
+    z-index: 5;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ==================================================
+   TITLE
+================================================== */
+
+.story_title {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 40px;
+
+    margin-bottom: 55px;
+}
+
+
+.story_title_item span {
+    display: block;
+
+    font-family: "athena", sans-serif;
+
+    font-size: 50px;
+
+    font-weight: 500;
+
+    line-height: 1.5;
+
+    letter-spacing: 1.5px;
+
+    color: #21201d;
+}
+
+
+/* 화살표 */
+
+.story_arrow {
+    display: block;
+
+    font-family: "athena", sans-serif;
+
+    font-size: 50px;
+
+    font-weight: 200;
+
+    line-height: 1.5;
+
+    color: #AD794B;
+}
+
+
+/* ==================================================
+   CARD WRAP
+================================================== */
+
+.story_card_wrap {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 100px;
+
+}
+
+
+/* ==================================================
+   STORY CARD
+================================================== */
+
+.story_card {
+    position: relative;
     text-align: center;
 }
 
-.story_text_section h2 {
-    font-size: 34px;
-    margin-bottom: 20px;
-    font-weight: 400;
-    letter-spacing: -0.5px;
+
+/* ==================================================
+   CARD IMAGE
+================================================== */
+
+.story_card_image {
+    width: 300px;
+    height: 350px;
+
+    overflow: hidden;
 }
 
-.story_text_section p {
+
+.story_card_image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ==================================================
+   CARD BETWEEN LINE
+================================================== */
+.story_card:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: -50px;
+
+    width: 1px;
+    height: 350px;
+
+    background: #AD794B;
+}
+
+/* ==================================================
+   CARD TEXT
+================================================== */
+.story_card_text {
+    padding-top: 25px;
+}
+
+
+/* 영어 제목 */
+.story_card_text h3 {
+    margin: 0;
+
+    font-family: "athena", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 1.2px;
+
+    color: #21201d;
+}
+
+
+/* 한글 키워드 */
+.card_keyword {
+    position: relative;
+    display: block;
+
+    padding-bottom: 20px;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 1.2px;
+    color: #21201d;
+}
+
+.card_keyword::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    width: 93px;
+    height: 1px;
+
+    background: #AD794B;
+    transform: translateX(-50%);
+}
+
+/* 설명 */
+.story_card_text p {
+    margin: 20px 0;
+
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: -0.3px;
+
+    color: #21201d;
+}
+
+
+
+/* ==================== WATERMARK ================================= */
+
+.story_watermark {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 443px;
+    height: 402px;
+
+    background-image:
+        url("../images/brand/brand_bg_logo.png");
+
+    background-repeat: no-repeat;
+
+    background-position: right bottom;
+
+    background-size: contain;
+
+    z-index: 2;
+}
+
+/* text */
+.story_title_item span {
+    font-size: 50px;
+}
+
+.story_arrow {
+    font-size: 50px;
+}
+
+.story_card_wrap {
+    gap: 100px;
+}
+
+/* ==================================================
+   STORY INTRO ANIMATION
+================================================== */
+
+/* 타이틀 각각 처음에는 숨김 */
+.story_title_item,
+.story_arrow {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+
+/* 카드 처음 상태 */
+.story_card {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+
+/* ==================================================
+   TITLE ANIMATION
+================================================== */
+
+.story_intro.is-active .story_title_item,
+.story_intro.is-active .story_arrow {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+/* LIGHT */
+.story_intro.is-active .story_title_item:nth-child(1) {
+    transition-delay: 0s;
+}
+
+
+/* 첫 번째 → */
+.story_intro.is-active .story_arrow:nth-child(2) {
+    transition-delay: 0.18s;
+}
+
+
+/* FORM */
+.story_intro.is-active .story_title_item:nth-child(3) {
+    transition-delay: 0.36s;
+}
+
+
+/* 두 번째 → */
+.story_intro.is-active .story_arrow:nth-child(4) {
+    transition-delay: 0.54s;
+}
+
+
+/* WALK */
+.story_intro.is-active .story_title_item:nth-child(5) {
+    transition-delay: 0.72s;
+}
+
+
+/* =================== CARD ANIMATION =================== */
+
+.story_intro.is-active .story_card {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+/* 카드 순차 등장 */
+.story_intro.is-active .story_card:nth-child(1) {
+    transition-delay: 1.0s;
+}
+
+.story_intro.is-active .story_card:nth-child(2) {
+    transition-delay: 1.3s;
+}
+
+.story_intro.is-active .story_card:nth-child(3) {
+    transition-delay: 1.6s;
+}
+
+
+/*  ================== 컨텐츠 3 ================ */
+
+.lumen-lookbook {
+    background: url(../images/brand/background_img02.jpg) no-repeat center / cover;
+    height: 1080px;
+    padding: 50px 119px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 1320px;
+}
+
+/* 기준이 되는 부모 박스 (relative 설정 및 적절한 높이 부여) */
+.lookbook-wrap {
+    position: relative;
+    width: 100%;
+    height: 900px;
+    /* 내부 절대 배치 요소들이 들어갈 충분한 높이 확보 */
+}
+
+/* 공통 절대 위치(position: absolute) 설정 */
+.pos-item {
+    position: absolute;
+}
+
+.pos-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* --------------------------------------------------
+   각각의 요소를 top, left, width로 정밀 제어
+   -------------------------------------------------- */
+
+/* 1번 카드: 좌측 상단 (텍스트 + 착샷) */
+.item-1 {
+    width: 427px;
+    height: 250px;
+
+    top: 50px;
+    left: 40px;
+}
+
+.item-1 .text-box {
+    margin-bottom: 20px;
+}
+
+.item-1 .subtitle {
+    font-family: "athena", sans-serif;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    color: #21201d;
+    font-weight: 600;
+}
+
+.item-1 .desc {
+    font-family: Pretendard, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* 2번 카드: 중앙 메인 아웃솔 밑면 (가장 큰 이미지) */
+.item-2 {
+    width: 450px;
+    height: 543px;
+
+    top: 30px;
+    left: 490px;
+    z-index: 2;
+    /* 필요시 레이어 순서 조절 */
+}
+
+/* 3번 카드: 우측 상단 작은 신발 컷 */
+.item-3 {
+    width: 243px;
+    height: 326px;
+
+    top: 40px;
+    left: 960px;
+}
+
+/* 4번 카드: 하단 좌측 신발 측면 컷 */
+.item-4 {
+    width: 332px;
+    height: 303px;
+
+    top: 445px;
+    left: 135px;
+}
+
+.text-box-bottom {
+    width: 270px;
+    height: 129px;
+    
+    position: absolute;
+    top: 595px;
+    left: 665px;
+
+    text-align: right;
+}
+.text-box-bottom p span {
+    font-family: "athena", sans-serif;
+    font-size: 24px;
+    color: #21201d;
+    line-height: 1.5;
+}
+.text-box-bottom p {
+    font-family: Pretendard, sans-serif; 
+    font-size: 20px;
+    color: #21201d;
+    line-height: 1.5;
+}
+
+/* 5번 카드: 하단 우측 부츠 컷 + 설명글 */
+.item-5 {
+    width: 383px;
+    height: 323px;
+
+    top: 400px;
+    left: 960px;
+}
+
+/* =========== 컨텐츠3 ANIMATION ===================== */
+
+/* 이미지 처음 상태 */
+.lumen-lookbook .image-box {
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+
+/* 애니메이션 실행 */
+.lumen-lookbook.is-active .image-box {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+/* 이미지 순차 등장 */
+.lumen-lookbook.is-active .item-1 .image-box {
+    transition-delay: 0.2s;
+}
+
+.lumen-lookbook.is-active .item-2 .image-box {
+    transition-delay: 0.4s;
+}
+
+.lumen-lookbook.is-active .item-3 .image-box {
+    transition-delay: 0.6s;
+}
+
+.lumen-lookbook.is-active .item-4 .image-box {
+    transition-delay: 0.8s;
+}
+
+.lumen-lookbook.is-active .item-5 .image-box {
+    transition-delay: 1s;
+}
+
+
+/* ===================== 엔딩 영상 ===================== */
+.story-ending {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ending-video {
+    width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+
+/* ================ footer =================== */
+
+#footer_wrap {
+    height: 600px;
+    background-color: #F4F2ED;
+    color: #21201D;
+    box-sizing: border-box;
+}
+
+
+/* ----------------------------------------
+   footer 전체 안쪽 영역
+---------------------------------------- */
+
+#footer_wrap .footer_section {
+    width: 1769px;
+    margin: 0 auto;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding: 91px 60px 140px;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   LEFT
+======================================== */
+
+#footer_wrap .footer-left {
+    display: flex;
+    flex-direction: column;
+
+    /* 로고와 회사정보 사이 간격 */
+    gap: 73px;
+}
+
+
+/* ----------------------------------------
+   Logo
+---------------------------------------- */
+
+#footer_wrap .logo-wrapper {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+
+#footer_wrap .logo {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+
+#footer_wrap .logo a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+#footer_wrap .logo img {
+    display: block;
+
+    width: 855px;
+    height: 180px;
+
+    object-fit: contain;
+}
+
+
+/* ========================================
+   COMPANY INFO
+======================================== */
+
+#footer_wrap .company-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+#footer_wrap .company-info p {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Pretendard", sans-serif;
     font-size: 16px;
-    color: #666;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    color: #21201D;
+}
+
+
+#footer_wrap .company-info p span {
+    display: inline-block;
+
+    width: 65px;
+    margin-right: 12px;
+
+    font-weight: 800;
+    color: #21201D;
+}
+
+
+/* ========================================
+   RIGHT / SNS
+======================================== */
+
+#footer_wrap .footer-right {
+    width: 300px;
+
+    margin-top: 10px;
+}
+
+
+/* ----------------------------------------
+   SNS LIST
+---------------------------------------- */
+
+#footer_wrap .sns-list {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* ----------------------------------------
+   각각의 SNS
+---------------------------------------- */
+
+#footer_wrap .sns-list li {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    border-top: 1px solid #21201D;
+}
+
+
+/* 마지막 줄에도 선을 넣고 싶으면 사용 */
+
+#footer_wrap .sns-list li:last-child {
+    border-bottom: 1px solid #21201D;
+}
+
+
+/* ----------------------------------------
+   SNS 링크
+---------------------------------------- */
+
+#footer_wrap .sns-list li a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 72px;
+
+    padding: 0 30px;
+
+    box-sizing: border-box;
+
+    color: #21201D;
+    text-decoration: none;
+
+    overflow: hidden;
+
+    transition:
+        color 0.35s ease,
+        padding 0.35s ease;
+}
+
+
+/* ----------------------------------------
+   SNS 이름
+---------------------------------------- */
+
+#footer_wrap .sns-name {
+    font-family: "Pretendard", sans-serif;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    text-transform: lowercase;
+
+    transition: transform 0.35s ease;
+}
+
+
+/* ----------------------------------------
+   Arrow
+---------------------------------------- */
+
+#footer_wrap .arrow {
+    display: inline-block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1;
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+#footer_wrap .sns-list li a:hover {
+    color: #AD794B;
+
+    padding-left: 12px;
+
+    text-shadow:
+        0 0 8px rgba(173, 121, 75, 0.25),
+        0 0 18px rgba(173, 121, 75, 0.12);
+}
+
+
+#footer_wrap .sns-list li a:hover .arrow {
+    transform: translateX(8px);
+
+    color: #AD794B;
+
+    text-shadow:
+        0 0 8px rgba(173, 121, 75, 0.4),
+        0 0 16px rgba(173, 121, 75, 0.4);
+}
+
+
+/* ========================================
+   LOGO HOVER
+======================================== */
+
+#footer_wrap .logo a {
+    position: relative;
+
+    display: inline-block;
+
+    overflow: hidden;
+
+    transition: opacity 0.4s ease;
+}
+
+
+/* 로고 자체도 살짝 빛나게 */
+
+#footer_wrap .logo a:hover {
+    opacity: 1;
+
+    filter:
+        drop-shadow(0 0 5px rgba(173, 121, 75, 0.4)) drop-shadow(0 0 14px rgba(173, 121, 75, 0.4));
 }

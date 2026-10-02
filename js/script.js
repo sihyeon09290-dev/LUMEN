@@ -1,75 +1,122 @@
 
 // ============================== OPENING ==============================
-// $(function () {
+$(function () {
 
-// const opening = document.getElementById('opening');
-// const video = document.getElementById('opening_video');
+    const opening = document.getElementById('opening');
+    const video = document.getElementById('opening_video');
 
-// if (!opening || !video) return;
+    if (!opening || !video) return;
 
-// let openingEnded = false;
+    let openingEnded = false;
+    let isMoving = false;
 
+       // ==========================================
+    // 다른 페이지에서 #섹션으로 들어온 경우
+    // 오프닝 바로 제거
+    // ==========================================
 
-// function closeOpening() {
+    if (window.location.hash) {
 
-//     if (openingEnded) return;
+        opening.remove();
 
-//     openingEnded = true;
+        return;
 
-//     console.log('OPENING CLOSE');
-
-
-// 영상이 끝난 뒤 잠깐 유지
-//     setTimeout(function () {
-
-//         $(opening).fadeOut(1000, function () {
-
-//             opening.remove();
-
-//             console.log('OPENING REMOVED');
-
-//         });
-
-//     }, 300);
-
-// }
+    }
 
 
-// 영상이 완전히 끝났을 때
-// video.addEventListener('ended', function () {
+    // ==========================================
+    // 오프닝 닫기
+    // ==========================================
 
-//     console.log('VIDEO ENDED');
+    function closeOpening() {
 
-//     closeOpening();
+        if (openingEnded) return;
 
-// });
+        openingEnded = true;
+
+        console.log('OPENING CLOSE');
+
+        $(opening).fadeOut(1000, function () {
+
+            opening.remove();
+
+            console.log('OPENING REMOVED');
+
+        });
+    }
 
 
-// 영상 오류
-// video.addEventListener('error', function () {
+    // ==========================================
+    // 영상 위에서 스크롤
+    // ==========================================
 
-//     console.log('VIDEO ERROR');
+    opening.addEventListener('wheel', function (e) {
 
-//     closeOpening();
+        // 브라우저 기본 스크롤 막기
+        e.preventDefault();
 
-// });
+        // 이벤트가 메인 화면으로 전달되는 것 막기
+        e.stopPropagation();
+
+        // 이미 처리했다면 중복 실행 방지
+        if (isMoving || openingEnded) return;
+
+        isMoving = true;
+
+        console.log('OPENING SCROLL');
 
 
-// 영상 재생
-// video.play().then(function () {
+        // 오프닝 제거
+        closeOpening();
 
-//     console.log('VIDEO PLAYING');
+    }, {
+        passive: false
+    });
 
-// }).catch(function (error) {
 
-//     console.log('VIDEO PLAY ERROR:', error);
+    // ==========================================
+    // 영상이 끝났을 때
+    // ==========================================
 
-//     closeOpening();
+    video.addEventListener('ended', function () {
 
-// });
+        console.log('VIDEO ENDED');
 
-// });
+        closeOpening();
 
+    });
+
+
+    // ==========================================
+    // 영상 오류
+    // ==========================================
+
+    video.addEventListener('error', function () {
+
+        console.log('VIDEO ERROR');
+
+        closeOpening();
+
+    });
+
+
+    // ==========================================
+    // 영상 재생
+    // ==========================================
+
+    video.play().then(function () {
+
+        console.log('VIDEO PLAYING');
+
+    }).catch(function (error) {
+
+        console.log('VIDEO PLAY ERROR:', error);
+
+        closeOpening();
+
+    });
+
+});
 
 // ------------------------ main banner
 $(function () {
@@ -493,28 +540,5 @@ var swiper = new Swiper(".lumen_message", {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// AOS
+AOS.init();

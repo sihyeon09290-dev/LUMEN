@@ -1,0 +1,1123 @@
+@charset "utf-8";
+
+
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+em,
+img,
+small,
+strong,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tr,
+th,
+td,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+summary,
+video,
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+html,
+body {
+    text-size-adjust: none;
+    /* text-size-adjust : 브라우저가 자동으로 텍스트 크기를 확대 및 축소하는 것을 제어한다. */
+    /* 가로 모드로 바꾸면 글자가 커지거나 줄어드는 경우가 있는데, 이 속성을 none으로 하면 디자인한 글자 크기가 유지된다. */
+    /* 모바일 브라우저에서 글자 크기를 자동으로 바꾸지 못하게 막는 설정 */
+    /* 디자인 의도대로 폰트 크기를 고정하려는 용도 */
+    /* prevent font scaling in landscape */
+    -webkit-text-size-adjust: none;
+    /* chrome, safari, 최신 opera */
+    -moz-text-size-adjust: none;
+    /* firefox */
+    -ms-text-size-adjust: none;
+    /* internet explorer */
+    -o-text-size-adjust: none;
+    /* 예전 opera */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* 스크롤이 부드럽게 해주는 속성 */
+}
+
+/* 기본 꾸미기 */
+body {
+    font-family: Pretendard, sans-serif;
+    font-size: 16px;
+    color: #21201d;
+    line-height: 1.5;
+}
+
+#wrap {
+    min-width: 1700px;
+}
+
+
+
+/* ==================== header ============== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 95px;
+
+    background-color: #21201d;
+
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.header.header_show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.logo {
+    margin: 120px;
+}
+
+.nav {
+    display: flex;
+    gap: 50px;
+    margin-right: 180px;
+}
+
+.nav li a {
+    display: block;
+    font-weight: 500;
+    position: relative;
+    color: #F4F2ED;
+    transition: 0.35s ease;
+}
+
+.nav li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 1px;
+    background: #AD794B;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px rgba(234, 177, 120, 0.7);
+    transition: width 0.35s ease;
+}
+
+.nav li a:hover {
+    color: #AD794B;
+    text-shadow: 0 0 8px rgba(234, 177, 120, 0.35);
+}
+
+.nav li a:hover::after {
+    width: 100%;
+}
+
+
+
+
+/* =========================================================
+   SHOP DETAIL
+========================================================= */
+
+.shop_detail {
+    position: relative;
+    /* 필수: 선들이 이 안쪽을 기준으로 배치됩니다 */
+    /* header 아래부터 시작 */
+    margin-top: 95px;
+
+    width: 100%;
+
+    display: flex;
+
+    background: #f4f2ed;
+}
+
+
+/* =========================================================
+   LEFT : PRODUCT VISUAL
+========================================================= */
+.producut_wrap {
+    width: calc(100% - 1060px);
+    height: auto;
+}
+
+.product_visual {
+    height: 820px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: #F4F2ED;
+
+    position: relative;
+}
+
+.detail_wrap {
+    width: 100%;
+}
+
+.detail_wrap img {
+    display: block;
+    width: 100%;
+}
+
+
+/* =========================================================
+   PRODUCT THUMBNAIL
+========================================================= */
+
+.product_thumbnail {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    cursor: pointer;
+}
+
+
+.thumbnail img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.thumbnail:hover {
+    opacity: 1;
+}
+
+
+.thumbnail.active {
+    opacity: 1;
+}
+
+
+/* 썸네일 스와이퍼 */
+.producut_wrap  .swiper {
+    margin: 0;
+}
+.product_thumbnail  .swiper-wrapper {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.producut_wrap .swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.producut_wrap .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.producut_wrap .swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.producut_wrap .product_main_image {
+    height: 444px;
+    width: 543px;
+}
+
+.producut_wrap .product_thumbnail {
+    box-sizing: border-box;
+}
+
+.producut_wrap .product_thumbnail .swiper-slide {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* =========================================================
+   MAIN PRODUCT IMAGE
+========================================================= */
+
+.product_main_image img {
+    display: block;
+    width: 543px;
+    height: 678px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   RIGHT : PRODUCT INFO
+========================================================= */
+
+.product_info {
+    width: 1060px;
+    height: 100%;
+    padding: 55px 110px 60px 60px;
+    display: flex;
+    flex-direction: column;
+    background: #f4f2ed;
+    border-left: 1px solid #AD794B;
+    padding-left: 208px;
+    box-sizing: border-box;
+
+    position: sticky;
+    top: 95px;
+}
+
+.product_info::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 153px;
+    background-color: #AD794B;
+}
+
+
+/* =========================================================
+   PRODUCT BASIC
+========================================================= */
+
+.product_basic {
+    position: relative;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+
+
+}
+
+.product_basic::after {
+    content: "";
+    position: absolute;
+    left: -209px;
+    right: -110px;
+
+    height: 1px;
+    background: #ad794b;
+}
+
+.product_category {
+    font-family: Pretendard, sans-serif;
+    margin-bottom: 27px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #21201d;
+
+    text-transform: uppercase;
+}
+
+
+.product_name {
+
+    margin-bottom: 3px;
+
+    font-family: Pretendard, sans-serif;
+
+    font-size: 30px;
+    font-weight: 800;
+    color: #21201d;
+}
+
+
+.product_price {
+    font-size: 18px;
+    font-weight: 400;
+    color: #21201d;
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   PRODUCT OPTION
+========================================================= */
+
+.product_option {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   COLOR
+========================================================= */
+.product_option h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #21201d;
+    letter-spacing: 0.2px;
+}
+
+
+.color_list {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.color {
+
+    position: relative;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: 1px solid #211f1d;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    cursor: pointer;
+
+}
+
+
+/* COLOR */
+
+.color.black {
+    background: #211f1d;
+}
+
+.color.olive {
+    background: #687052;
+}
+
+.color.brown {
+    background: #a65f43;
+}
+
+.color.beige {
+    background: #a99a86;
+}
+
+.color.sand {
+    background: #d8c5a8;
+}
+
+.color.cream {
+    background: #f3ebdd;
+}
+
+
+.color:hover {
+    transform: scale(1.2);
+}
+
+
+.color.active {
+    box-shadow:
+        0 0 0 1px #f4f2ed,
+        0 0 0 2px #21201d;
+}
+
+
+/* =========================================================
+   SIZE
+========================================================= */
+
+.size_option {
+    position: relative;
+    padding-top: 75px;
+}
+
+
+.size_list {
+
+    width: 600px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    row-gap: 26px;
+    column-gap: 5px;
+}
+
+
+.size_list button {
+    position: relative;
+
+    width: 75px;
+    height: 35px;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    text-align: left;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    color: #21201d;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.size_list button:hover {
+    color: #eab178;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-shadow: 0 4px 8px rgba(173, 121, 75, 0.5);
+}
+
+
+
+
+/* =========================================================
+   SIZE GUIDE
+========================================================= */
+
+.size_guide {
+
+    display: inline-flex;
+    align-items: center;
+
+    margin-top: 10px;
+    padding-left: 400px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #ad794b;
+
+    transition: color 0.3s ease;
+}
+
+
+.size_guide span {
+
+    margin-left: 10px;
+
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.size_guide:hover {
+    color: #AD794B;
+    text-shadow:
+        0 0 10px rgba(234, 177, 120, 0.5),
+        0 0 15px rgba(234, 177, 120, 0.3);
+}
+
+
+.size_guide:hover span {
+    filter:
+        drop-shadow(0 0 4px rgba(234, 177, 120, 0.6)) drop-shadow(0 0 12px rgba(234, 177, 120, 0.35));
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   PURCHASE
+========================================================= */
+
+.product_purchase {
+    width: 530px;
+    margin-top: 35px;
+}
+
+
+/* =========================================================
+   BUY NOW
+========================================================= */
+
+.btn_buy {
+
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ad794b;
+
+    color: #F4F2ED;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.btn_buy:hover {
+
+    background: #94633e;
+    box-shadow:
+        0 5px 10px rgba(221, 198, 178, 0.6);
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CART / WISHLIST
+========================================================= */
+
+.purchase_sub {
+    display: flex;
+    width: 100%;
+    margin-top: 12px;
+    gap: 12px;
+}
+
+
+.btn_cart,
+.btn_wishlist {
+
+    width: 50%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    border: 1px solid #ad794b;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.btn_cart,
+.btn_wishlist {
+    color: #AD794B;
+    background-color: #F4F2ED;
+    cursor: pointer;
+}
+
+.btn_cart:hover,
+.btn_wishlist:hover {
+    background: #ad794b;
+    color: #F4F2ED;
+}
+
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.cart_icon,
+.heart_icon {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+
+    transform: translateY(-50%);
+}
+
+
+.cart_icon img,
+.heart_icon img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+#footer_wrap {
+    width: 100%;
+    background: #f8f6f0;
+}
+
+
+.footer_section {
+    width: 1400px;
+    min-height: 330px;
+    margin: 0 auto;
+
+    padding: 70px 0 55px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   FOOTER LEFT
+========================================== */
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/* LUMEN 로고 */
+.logo-wrapper img {
+    display: block;
+    width: 360px;
+    height: auto;
+}
+
+
+/* 회사 정보 */
+.company-info {
+    margin-top: 25px;
+}
+
+
+.company-info p {
+    margin: 0;
+
+    font-size: 9px;
+    line-height: 1.7;
+    color: #555;
+}
+
+
+/* ==========================================
+   FOOTER RIGHT
+========================================== */
+
+.footer-right {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.sns-list {
+    width: 150px;
+}
+
+
+.sns-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 38px;
+
+    border-bottom: 1px solid #aaa;
+
+    text-decoration: none;
+    color: #222;
+
+    font-size: 10px;
+}
+
+
+.sns-list a:first-child {
+    border-top: 1px solid #aaa;
+}
+
+
+.sns-list a span {
+    font-size: 10px;
+}
+
+
+.sns-list a::after {
+    content: '→';
+
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+/* ==========================================
+   SWIPER
+========================================== */
+
+.store_image .swiper-pagination {
+    bottom: 15px;
+}
+
+
+.store_image .swiper-pagination-bullet {
+    width: 5px;
+    height: 5px;
+
+    background: #fff;
+    opacity: 0.5;
+}
+
+
+.store_image .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+
+
+
+
+/* ================ footer =================== */
+
+#footer_wrap {
+    height: 600px;
+    background-color: #F4F2ED;
+    color: #21201D;
+    box-sizing: border-box;
+}
+
+
+/* ----------------------------------------
+   footer 전체 안쪽 영역
+---------------------------------------- */
+
+#footer_wrap .footer_section {
+    width: 1769px;
+    margin: 0 auto;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding: 91px 60px 140px;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   LEFT
+======================================== */
+
+#footer_wrap .footer-left {
+    display: flex;
+    flex-direction: column;
+
+    /* 로고와 회사정보 사이 간격 */
+    gap: 73px;
+}
+
+
+/* ----------------------------------------
+   Logo
+---------------------------------------- */
+
+#footer_wrap .logo-wrapper {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+
+#footer_wrap .logo {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+
+#footer_wrap .logo a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+#footer_wrap .logo img {
+    display: block;
+
+    width: 855px;
+    height: 180px;
+
+    object-fit: contain;
+}
+
+
+/* ========================================
+   COMPANY INFO
+======================================== */
+
+#footer_wrap .company-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+#footer_wrap .company-info p {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Pretendard", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    color: #21201D;
+}
+
+
+#footer_wrap .company-info p span {
+    display: inline-block;
+
+    width: 65px;
+    margin-right: 12px;
+
+    font-weight: 800;
+    color: #21201D;
+}
+
+
+/* ========================================
+   RIGHT / SNS
+======================================== */
+
+#footer_wrap .footer-right {
+    width: 300px;
+
+    margin-top: 10px;
+}
+
+
+/* ----------------------------------------
+   SNS LIST
+---------------------------------------- */
+
+#footer_wrap .sns-list {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* ----------------------------------------
+   각각의 SNS
+---------------------------------------- */
+
+#footer_wrap .sns-list li {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    border-top: 1px solid #21201D;
+}
+
+
+/* 마지막 줄에도 선을 넣고 싶으면 사용 */
+
+#footer_wrap .sns-list li:last-child {
+    border-bottom: 1px solid #21201D;
+}
+
+
+/* ----------------------------------------
+   SNS 링크
+---------------------------------------- */
+
+#footer_wrap .sns-list li a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 72px;
+
+    padding: 0 30px;
+
+    box-sizing: border-box;
+
+    color: #21201D;
+    text-decoration: none;
+
+    overflow: hidden;
+
+    transition:
+        color 0.35s ease,
+        padding 0.35s ease;
+}
+
+
+/* ----------------------------------------
+   SNS 이름
+---------------------------------------- */
+
+#footer_wrap .sns-name {
+    font-family: "Pretendard", sans-serif;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    text-transform: lowercase;
+
+    transition: transform 0.35s ease;
+}
+
+
+/* ----------------------------------------
+   Arrow
+---------------------------------------- */
+
+#footer_wrap .arrow {
+    display: inline-block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1;
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+#footer_wrap .sns-list li a:hover {
+    color: #AD794B;
+
+    padding-left: 12px;
+
+    text-shadow:
+        0 0 8px rgba(173, 121, 75, 0.25),
+        0 0 18px rgba(173, 121, 75, 0.12);
+}
+
+
+#footer_wrap .sns-list li a:hover .arrow {
+    transform: translateX(8px);
+
+    color: #AD794B;
+
+    text-shadow:
+        0 0 8px rgba(173, 121, 75, 0.4),
+        0 0 16px rgba(173, 121, 75, 0.4);
+}
+
+
+/* ========================================
+   LOGO HOVER
+======================================== */
+
+#footer_wrap .logo a {
+    position: relative;
+
+    display: inline-block;
+
+    overflow: hidden;
+
+    transition: opacity 0.4s ease;
+}
+
+
+/* 로고 자체도 살짝 빛나게 */
+
+#footer_wrap .logo a:hover {
+    opacity: 1;
+
+    filter:
+        drop-shadow(0 0 5px rgba(173, 121, 75, 0.4)) drop-shadow(0 0 14px rgba(173, 121, 75, 0.4));
+}

@@ -1,0 +1,887 @@
+@charset "utf-8";
+
+
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+em,
+img,
+small,
+strong,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tr,
+th,
+td,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+summary,
+video,
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html,
+body {
+    text-size-adjust: none;
+    /* text-size-adjust : 브라우저가 자동으로 텍스트 크기를 확대 및 축소하는 것을 제어한다. */
+    /* 가로 모드로 바꾸면 글자가 커지거나 줄어드는 경우가 있는데, 이 속성을 none으로 하면 디자인한 글자 크기가 유지된다. */
+    /* 모바일 브라우저에서 글자 크기를 자동으로 바꾸지 못하게 막는 설정 */
+    /* 디자인 의도대로 폰트 크기를 고정하려는 용도 */
+    /* prevent font scaling in landscape */
+    -webkit-text-size-adjust: none;
+    /* chrome, safari, 최신 opera */
+    -moz-text-size-adjust: none;
+    /* firefox */
+    -ms-text-size-adjust: none;
+    /* internet explorer */
+    -o-text-size-adjust: none;
+    /* 예전 opera */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* 스크롤이 부드럽게 해주는 속성 */
+}
+
+/* 기본 꾸미기 */
+body {
+    font-family: Pretendard, sans-serif;
+    font-size: 16px;
+    color: #21201d;
+    line-height: 1.5;
+}
+
+
+/*================== header ====================*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 95px;
+
+    background-color: #21201d;
+
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.header.header_show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.logo {
+    margin: 120px;
+}
+
+.nav {
+    display: flex;
+    gap: 50px;
+    margin-right: 180px;
+}
+
+.nav li a {
+    display: block;
+    font-weight: 500;
+    position: relative;
+    color: #F4F2ED;
+    transition: 0.35s ease;
+}
+
+.nav li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 1px;
+    background: #AD794B;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px rgba(234, 177, 120, 0.7);
+    transition: width 0.35s ease;
+}
+
+.nav li a:hover {
+    color: #AD794B;
+    text-shadow: 0 0 8px rgba(234, 177, 120, 0.35);
+}
+
+.nav li a:hover::after {
+    width: 100%;
+}
+
+/* ================= header ==================== */
+
+
+
+/* ==================== STORE PAGE ====================== */
+
+.store_page {
+    position: relative;
+    color: #21201d;
+    font-family: 'Pretendard', sans-serif;
+}
+
+
+ .store_page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image: url(../images/store/store_bg.jpg);
+
+    opacity: 0.18;
+}
+
+
+ .store_page::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -3;
+
+    background-color: #8c8b88;
+    opacity: 0.7;
+}
+
+
+
+
+/* ==========================================
+   STORE LIST
+========================================== */
+
+.store_list {
+    position: relative;
+    z-index: 1;
+
+    height: 2270px;
+    margin: 0 auto;
+    padding: 145px 0 0;
+}
+
+
+/* ==========================================
+   STORE ITEM
+========================================== */
+
+.store_item {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    width: 100%;
+    height: 650px;
+    align-items: center;
+
+    border: 1px solid #AD794B;
+    box-sizing: border-box;
+
+    background-color: #F4F2ED;
+}
+
+/* 매장 사이 간격 */
+.store_item+.store_item {
+    margin-top: 50px;
+}
+
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.store_image {
+    width: 782px;
+    height: 558px;
+
+    overflow: hidden;
+}
+
+
+/* Swiper 기본 설정 */
+.store_image.swiper {
+    width: 782px;
+    height: 558px;
+}
+
+
+.store_image .swiper-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+
+.store_image .swiper-slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.store_image .swiper-slide img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* 1. Swiper 기본 화살표 숨기기 */
+.store_image .swiper-button-prev::after,
+.store_image .swiper-button-next::after {
+    display: none; 
+}
+
+/* 2. 버튼 기본 스타일 및 색상 지정 */
+.store_image .swiper-button-prev,
+.store_image .swiper-button-next {
+    color: #eab178; /* 평소 아이콘 색상 */
+    font-size: 24px; /* 크기 조절 */
+    font-weight: bold;
+    transition: color 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+/* 3. 💡 마우스 올렸을 때 색상 변경 */
+.store_image .swiper-button-prev:hover,
+.store_image .swiper-button-next:hover {
+    color: #AD794B !important; /* 호버했을 때 색상 */
+}
+
+/* ==========================================
+   STORE INFO
+========================================== */
+
+.store_info {
+    width: 50%;
+    height: 100%;
+
+    padding: 55px 60px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* 광안리 / 대구
+   IMAGE → INFO
+   정보 영역 왼쪽에 세로선 */
+.store_item_left .store_info {
+    border-left: 1px solid #AD794B;
+}
+
+
+/* 남포
+   INFO → IMAGE
+   정보 영역 오른쪽에 세로선 */
+.store_item_right .store_info {
+    border-right: 1px solid #AD794B;
+}
+
+
+/* ==========================================
+   STORE TITLE
+========================================== */
+
+.store_info h2 {
+    margin: 0 0 10px;
+
+    font-family: "athena", sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+.store_nampo {
+    text-align: right;
+}
+.store_nampo ul li{
+    justify-content: flex-end;
+}
+
+.store_info .store_location {
+    display: block;
+
+    /* 가로선을 좌우 끝까지 확장 */
+    margin-left: -60px;
+    margin-right: -60px;
+
+    /* 글자는 기존 위치 유지 */
+    padding: 0 60px 20px;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    letter-spacing: 0.05em;
+
+    color: #21201d;
+
+    border-bottom: 1px solid #AD794B;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   ABOUT SPACE
+========================================== */
+
+.store_about {
+    margin-bottom: 0;
+    padding: 25px 0;
+}
+
+
+.store_about h3,
+.store_information h3 {
+    margin: 0 0 10px;
+
+    font-family: "athena", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+
+.store_about p {
+    margin: 0;
+
+    font-family: "athena", sans-serif;
+    font-size: 18px;
+
+    line-height: 150%;
+
+    color: #21201d;
+}
+
+
+/* ==========================================
+   INFORMATION
+========================================== */
+
+.store_information {
+    padding-top: 25px;
+}
+
+
+.store_information ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.store_information li {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 15px;
+
+    font-family: Pretendard, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    color: #21201d;
+}
+
+
+.store_information li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* 아이콘 */
+
+.store_information li img {
+    width: 22px;
+    height: 22px;
+
+    margin-right: 15px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+/* ============ LEFT / RIGHT ========= */
+
+.store_item_left {
+    display: flex;
+    flex-direction: row;
+}
+
+/* ==================== STORE PAGE ====================== */
+
+
+
+
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+#footer_wrap {
+    width: 100%;
+    background: #f8f6f0;
+}
+
+
+.footer_section {
+    width: 1400px;
+    min-height: 330px;
+    margin: 0 auto;
+
+    padding: 70px 0 55px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   FOOTER LEFT
+========================================== */
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/* LUMEN 로고 */
+.logo-wrapper img {
+    display: block;
+    width: 360px;
+    height: auto;
+}
+
+
+/* 회사 정보 */
+.company-info {
+    margin-top: 25px;
+}
+
+
+.company-info p {
+    margin: 0;
+
+    font-size: 9px;
+    line-height: 1.7;
+    color: #555;
+}
+
+
+/* ==========================================
+   FOOTER RIGHT
+========================================== */
+
+.footer-right {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.sns-list {
+    width: 150px;
+}
+
+
+.sns-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 38px;
+
+    border-bottom: 1px solid #aaa;
+
+    text-decoration: none;
+    color: #222;
+
+    font-size: 10px;
+}
+
+
+.sns-list a:first-child {
+    border-top: 1px solid #aaa;
+}
+
+
+.sns-list a span {
+    font-size: 10px;
+}
+
+
+.sns-list a::after {
+    content: '→';
+
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+/* ==========================================
+   SWIPER
+========================================== */
+
+.store_image .swiper-pagination {
+    bottom: 15px;
+}
+
+
+.store_image .swiper-pagination-bullet {
+    width: 5px;
+    height: 5px;
+
+    background: #fff;
+    opacity: 0.5;
+}
+
+
+.store_image .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+
+
+
+
+/* ================ footer =================== */
+
+#footer_wrap {
+    height: 600px;
+    background-color: #F4F2ED;
+    color: #21201D;
+    box-sizing: border-box;
+}
+
+
+/* ----------------------------------------
+   footer 전체 안쪽 영역
+---------------------------------------- */
+
+#footer_wrap .footer_section {
+    width: 1769px;
+    margin: 0 auto;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding: 91px 60px 140px;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   LEFT
+======================================== */
+
+#footer_wrap .footer-left {
+    display: flex;
+    flex-direction: column;
+
+    /* 로고와 회사정보 사이 간격 */
+    gap: 73px;
+}
+
+
+/* ----------------------------------------
+   Logo
+---------------------------------------- */
+
+#footer_wrap .logo-wrapper {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+
+#footer_wrap .logo {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+
+#footer_wrap .logo a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+#footer_wrap .logo img {
+    display: block;
+
+    width: 855px;
+    height: 180px;
+
+    object-fit: contain;
+}
+
+
+/* ========================================
+   COMPANY INFO
+======================================== */
+
+#footer_wrap .company-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+#footer_wrap .company-info p {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Pretendard", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    color: #21201D;
+}
+
+
+#footer_wrap .company-info p span {
+    display: inline-block;
+
+    width: 65px;
+    margin-right: 12px;
+
+    font-weight: 800;
+    color: #21201D;
+}
+
+
+/* ========================================
+   RIGHT / SNS
+======================================== */
+
+#footer_wrap .footer-right {
+    width: 300px;
+
+    margin-top: 10px;
+}
+
+
+/* ----------------------------------------
+   SNS LIST
+---------------------------------------- */
+
+#footer_wrap .sns-list {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* ----------------------------------------
+   각각의 SNS
+---------------------------------------- */
+
+#footer_wrap .sns-list li {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    border-top: 1px solid #21201D;
+}
+
+
+/* 마지막 줄에도 선을 넣고 싶으면 사용 */
+
+#footer_wrap .sns-list li:last-child {
+    border-bottom: 1px solid #21201D;
+}
+
+
+/* ----------------------------------------
+   SNS 링크
+---------------------------------------- */
+
+#footer_wrap .sns-list li a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 72px;
+
+    padding: 0 30px;
+
+    box-sizing: border-box;
+
+    color: #21201D;
+    text-decoration: none;
+
+    overflow: hidden;
+
+    transition:
+        color 0.35s ease,
+        padding 0.35s ease;
+}
+
+
+/* ----------------------------------------
+   SNS 이름
+---------------------------------------- */
+
+#footer_wrap .sns-name {
+    font-family: "Pretendard", sans-serif;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    text-transform: lowercase;
+
+    transition: transform 0.35s ease;
+}
+
+
+/* ----------------------------------------
+   Arrow
+---------------------------------------- */
+
+#footer_wrap .arrow {
+    display: inline-block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1;
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+#footer_wrap .sns-list li a:hover {
+    color: #AD794B;
+
+    padding-left: 12px;
+
+    text-shadow:
+        0 0 8px rgba(173, 121, 75, 0.25),
+        0 0 18px rgba(173, 121, 75, 0.12);
+}
+
+
+#footer_wrap .sns-list li a:hover .arrow {
+    transform: translateX(8px);
+
+    color: #AD794B;
+
+    text-shadow:
+        0 0 8px rgba(173, 121, 75, 0.4),
+        0 0 16px rgba(173, 121, 75, 0.4);
+}
+
+
+/* ========================================
+   LOGO HOVER
+======================================== */
+
+#footer_wrap .logo a {
+    position: relative;
+
+    display: inline-block;
+
+    overflow: hidden;
+
+    transition: opacity 0.4s ease;
+}
+
+
+/* 로고 자체도 살짝 빛나게 */
+
+#footer_wrap .logo a:hover {
+    opacity: 1;
+
+    filter:
+        drop-shadow(0 0 5px rgba(173, 121, 75, 0.4)) drop-shadow(0 0 14px rgba(173, 121, 75, 0.4));
+}
