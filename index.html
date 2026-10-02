@@ -20,6 +20,9 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
 
+    <!-- AOS css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
     <!-- 외부 css 연결 -->
     <link rel="stylesheet" href="css/style.css">
@@ -32,11 +35,11 @@
     <div id="wrap">
 
         <!-- OPENING -->
-        <!-- <div id="opening">
+        <div id="opening">
             <video id="opening_video" autoplay muted playsinline>
-                <source src="./lumen opening.mp4" type="video/mp4">
+                <source src="./ai_video/1.mp4" type="video/mp4">
             </video>
-        </div> -->
+        </div>
 
         <div id="banner">
 
@@ -46,7 +49,7 @@
                     <div class="swiper-slide slide_flex">
                         <div class="logo_box"> <!-- 첫번째 배너 -->
                             <img src="./images/common/logo_black.svg" alt="logo">
-                            <p>Walk Toward Your Light.</p>
+                            <p data-aos="fade-right" data-aos-duration="1500">Walk Toward Your Light.</p>
                         </div>
 
                         <div class="img_box">
@@ -91,29 +94,29 @@
 
             <ul class="nav">
                 <li>
-                    <a href="#">Brand Story</a>
+                    <a href="brand_story.html">Brand Story</a>
                 </li>
                 <li>
-                    <a href="#">Shop</a>
+                    <a href="shop.html">Shop</a>
                 </li>
                 <li>
-                    <a href="#">Accessories</a>
+                    <a href="#accessories_section">Accessories</a>
                 </li>
                 <li>
-                    <a href="#">Lumen Care</a>
+                    <a href="#lumen_care_wrap">Lumen Care</a>
                 </li>
                 <li>
-                    <a href="#">Store</a>
+                    <a href="store.html">Store</a>
                 </li>
                 <li>
-                    <a href="#">Lookbook</a>
+                    <a href="#lookbook_wrap">Lookbook</a>
                 </li>
             </ul>
         </div>
 
 
         <div id="brand_wrap">
-            <div class="brand">
+            <div class="brand" data-aos="fade-right" data-aos-duration="1500">
                 <h2 class="brand_tit">
                     <img src="./images/brand/brand_comment.png" alt="브랜드 타이틀">
                 </h2>
@@ -143,7 +146,7 @@
             </div>
 
             <div class="discover">
-                <a href="#">
+                <a href="./brand_story.html">
                     <p>DISCOVER LUMEN</p>
                     <img src="./images/common/arrow.svg" alt="화살표">
                 </a>
@@ -152,9 +155,9 @@
 
 
         <section class="shop">
-            <h2 class="shop_title">Shop</h2>
+            <h2 class="shop_title" data-aos="fade-down" data-aos-duration="2000">Shop</h2>
             <!-- Swiper -->
-            <div class="swiper shop_slider_swiper">
+            <div class="swiper shop_slider_swiper" data-aos="fade-up" data-aos-duration="2000">
 
                 <div class="swiper-wrapper shop_swiper">
 
@@ -1089,7 +1092,7 @@
                 <div class="product-grid">
 
                     <!-- 상품 1: SOCKS -->
-                    <div class="product-item">
+                    <div class="product-item" data-aos="fade-up" data-aos-duration="1500">
                         <div class="image-wrapper">
                             <img src="./images/shop/socks.jpg" alt="SOCKS"> <!-- 이미지 경로 설정 -->
                             <!-- 옵션 버튼들 (블랙, 아이보리, 그레이, 버건디) -->
@@ -1107,7 +1110,7 @@
                     </div>
 
                     <!-- 상품 2: INSOL -->
-                    <div class="product-item">
+                    <div class="product-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
                         <div class="image-wrapper">
                             <img src="./images/shop/insol.jpg" alt="INSOL">
                             <div class="options-overlay">
@@ -1122,7 +1125,7 @@
                     </div>
 
                     <!-- 상품 3: SHOE BAG -->
-                    <div class="product-item">
+                    <div class="product-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
                         <div class="image-wrapper">
                             <img src="./images/shop/shoebag.jpg" alt="SHOE BAG">
                             <div class="options-overlay">
@@ -1145,7 +1148,7 @@
             <div class="lumen-care-wrapper">
 
                 <!-- 왼쪽 고정 영역 (대표 상품) -->
-                <div class="lumen-care-left">
+                <div class="lumen-care-left" data-aos="fade-down-right" data-aos-duration="2000">
                     <h2 class="section-title">LUMEN CARE</h2>
                     <div class="lumen-care-sticky">
                         <div class="lumen-care-card">
@@ -1243,7 +1246,7 @@
 
                     <!-- GWANGALLI -->
 
-                    <article class="store_card active">
+                    <article class="store_card active" data-aos="fade-up" data-aos-duration="1500">
 
                         <div class="store_card_inner">
 
@@ -1299,7 +1302,7 @@
                                         </p>
 
 
-                                        <a href="#" class="store_link">
+                                        <a href="store.html" class="store_link">
                                             VIEW LOCATION
                                             <span>→</span>
                                         </a>
@@ -1318,7 +1321,7 @@
 
                     <!-- NAMPO -->
 
-                    <article class="store_card">
+                    <article class="store_card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
 
                         <div class="store_card_inner">
 
@@ -1366,7 +1369,7 @@
                                             051-123-4567
                                         </p>
 
-                                        <a href="#" class="store_link">
+                                        <a href="store.html" class="store_link">
                                             VIEW LOCATION
                                             <span>→</span>
                                         </a>
@@ -1385,7 +1388,7 @@
 
                     <!--DAEGU -->
 
-                    <article class="store_card">
+                    <article class="store_card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="700">
 
                         <div class="store_card_inner">
 
@@ -1434,7 +1437,7 @@
                                             053-123-4567
                                         </p>
 
-                                        <a href="#" class="store_link">
+                                        <a href="store.html" class="store_link">
                                             VIEW LOCATION
                                             <span>→</span>
                                         </a>
@@ -1461,18 +1464,31 @@
         <div id="lookbook_wrap">
             <div class="lookbook-container">
                 <!-- 상단 타이틀 및 시즌 버튼 -->
-                <div class="lookbook-header">
+                <div class="lookbook-header" data-aos="fade-down" data-aos-duration="2000">
                     <h2 class="look_title">Lookbook</h2>
+
                     <div class="season-buttons">
-                        <button class="season-btn active" data-season="spring">봄</button>
-                        <button class="season-btn" data-season="summer">여름</button>
-                        <button class="season-btn" data-season="autumn">가을</button>
-                        <button class="season-btn" data-season="winter">겨울</button>
+
+                        <button class="season-btn active" data-season="spring">
+                            봄
+                        </button>
+
+                        <button class="season-btn" data-season="summer">
+                            여름
+                        </button>
+
+                        <button class="season-btn" data-season="autumn">
+                            가을
+                        </button>
+
+                        <button class="season-btn" data-season="winter">
+                            겨울
+                        </button>
                     </div>
                 </div>
 
                 <!-- 메인 콘텐츠 -->
-                <div class="lookbook-content">
+                <div class="lookbook-content" data-aos="fade-up" data-aos-duration="2000">
                     <!-- 첫 번째 고정 영상 카드 -->
                     <div class="main-video-card">
                         <video id="season-video" autoplay muted loop playsinline>
@@ -1541,7 +1557,7 @@
             </div>
         </div>
 
-        
+
     </div>
 
 
@@ -1561,6 +1577,9 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
     <!-- jQuery 파일 연결 -->
     <script src="js/script.js"></script>
