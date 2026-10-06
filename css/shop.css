@@ -106,17 +106,12 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 95px;
-
     background-color: #21201d;
-
     display: flex;
     justify-content: space-between;
-    text-align: center;
     align-items: center;
-
     z-index: 9999;
 }
 
@@ -127,24 +122,37 @@ body {
 }
 
 .logo {
-    margin: 120px;
+    margin-left: 120px;
+    /* 좌우 여백 세분화 (필요시 조정) */
 }
 
 .nav {
     display: flex;
     gap: 50px;
     margin-right: 180px;
+    list-style: none;
+    align-items: center;
+    height: 100%;
 }
 
-.nav li a {
+/* 💡 핵심: li에 position: relative를 주어야 서브메뉴가 이 요소를 기준으로 위치를 잡습니다 */
+.nav>li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav>li>a {
     display: block;
     font-weight: 500;
     position: relative;
     color: #F4F2ED;
     transition: 0.35s ease;
+    text-decoration: none;
 }
 
-.nav li a::after {
+.nav>li>a::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -157,16 +165,206 @@ body {
     transition: width 0.35s ease;
 }
 
-.nav li a:hover {
+.nav li>a:hover {
     color: #AD794B;
-    text-shadow: 0 0 8px rgba(234, 177, 120, 0.35);
+    text-shadow:
+        0 0 5px rgba(234, 177, 120, 0.5),
+        0 0 15px rgba(234, 177, 120, 0.35);
 }
 
-.nav li a:hover::after {
+.nav li>a:hover::after {
     width: 100%;
 }
 
 
+.sub-menu-section.lookbook-section .content-wrapper {
+    grid-template-columns: 2fr 1fr;
+}
+
+.sub-menu-section.lookbook-section ul{
+    flex-direction: row;
+    gap: 25px;
+    width: 595px;
+}
+
+.sub-menu-section.lookbook-section ul li a{
+    padding: 0;
+}
+
+.sub-menu-section.lookbook-section .sub-nav li{
+    width: 130px;
+    height: 200px;
+
+    transform: scale(1);
+
+    border: none;
+    overflow: hidden;
+}
+.sub-menu-section.lookbook-section .sub-nav li img {
+     width: 100%;
+    display: block;
+    transition: all 0.3s;
+}
+.sub-menu-section.lookbook-section .sub-nav li img:hover {
+    transform: scale(1.2);
+}
+
+
+/* ==========================================
+   메가 메뉴 (서브 메뉴 섹션) 스타일
+   ========================================== */
+.sub-menu-section {
+    display: none;
+    /* 평소엔 숨김 */
+    position: fixed;
+    /* 화면 전체 너비를 쓰기 위해 fixed 또는 absolute 활용 */
+    top: 95px;
+    /* 헤더 높이만큼 아래에 위치 */
+    left: 0;
+    width: 100%;
+    /* 화면 전체 너비 */
+    background-color: #21201d;
+    /* 헤더와 동일하거나 어울리는 베이지톤 */
+    color: #f4f2ed;
+    padding: 23px 0 23px 0;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+    z-index: 1000;
+}
+
+/* Brand Menu에 마우스 올렸을 때 서브메뉴 노출 */
+.nav>li:hover .sub-menu-section {
+    display: block;
+}
+
+/* 서브 메뉴 내부 그리드 레이아웃 */
+.sub-menu-section .section-header {
+    max-width: 1200px;
+    margin: 0 auto 25px auto;
+    padding: 0 20px;
+}
+
+.sub-menu-section .sub-menu-title {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.sub-menu-section .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr;
+    /* 좌측 링크, 이미지, 텍스트 비율 */
+    gap: 100px;
+    align-items: center;
+}
+
+/* 서브메뉴 내부 링크 리스트 */
+/* 서브메뉴 내부 링크 리스트 */
+.sub-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    /* 고정 폭을 주어 깔끔하게 정렬 */
+}
+
+/* 💡 원본 이미지처럼 메뉴 항목별 위아래 구분선 추가 */
+.sub-nav li {
+    border-bottom: 1px solid #AD794B;
+}
+
+.sub-nav li:last-child {
+    border-bottom: none;
+}
+
+.sub-nav li a {
+    font-family: "athena", sans-serif;
+    text-decoration: none;
+    color: #f4f2ed;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    padding: 12px 0;
+    /* 위아래 여백을 주어 선과 간격 조절 */
+    transition: color 0.2s ease;
+}
+
+.sub-nav li a:hover {
+    color: #AD794B;
+}
+
+/* 서브메뉴 이미지 */
+.brand-image {
+    width: 350px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.brand-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* 서브메뉴 설명 텍스트 & 버튼 영역 */
+.brand-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    /* 간격 너무 넓지 않게 조정 */
+}
+
+.brand-desc p {
+    font-family: "athena", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #f4f2ed;
+    margin: 0;
+}
+
+/* 💡 VIEW MORE와 화살표를 양 끝으로 정렬하는 스타일 (추가 필요) */
+.view-more-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 210px;
+    /* 전체 버튼 영역 너비 조절 */
+    text-decoration: none;
+}
+
+.view-text {
+    font-family: "athena", sans-serif;
+    font-size: 18px;
+    color: #ad794b;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.view-text:hover {
+    text-shadow:
+        0 0 5px rgba(234, 177, 120, 0.5),
+        0 0 15px rgba(234, 177, 120, 0.35);
+}
+
+.view-arrow {
+    color: #ad794b;
+    font-size: 15px;
+    transition: transform 0.2s ease;
+}
+
+.view-more-wrap:hover .view-arrow {
+    transform: translateX(5px);
+    /* 호버 시 화살표 살짝 이동 */
+    filter:
+        drop-shadow(0 0 4px rgba(234, 177, 120, 0.6)) drop-shadow(0 0 12px rgba(234, 177, 120, 0.35));
+}
 
 
 /* =========================================================
