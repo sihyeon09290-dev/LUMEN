@@ -1,3 +1,27 @@
+// submenu
+$(function() {
+
+    // .submenu를 숨긴다.
+    $(".sub-menu-section").hide();
+
+    // .gnb li한테 마우스를 올리면,
+    $(".nav li").mouseenter(function() {
+
+        // .gnb li의 자식요소인 .submenu가 slideDown 한다.
+        $(this).children(".sub-menu-section").stop().slideDown();
+    });
+
+    // .gnb li에서 마우스가 벗어나면,
+    $(".nav li").mouseleave(function() {
+
+        // .gnb li의 자식요소인 .submenu가 slideUp 한다.
+        $(this).children(".sub-menu-section").stop().slideUp();
+    });
+});
+
+
+
+
 
 
 const storeSwipers = document.querySelectorAll('.storeSwiper');

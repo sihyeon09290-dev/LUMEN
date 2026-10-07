@@ -214,8 +214,6 @@ body {
    메가 메뉴 (서브 메뉴 섹션) 스타일
    ========================================== */
 .sub-menu-section {
-    display: none;
-    /* 평소엔 숨김 */
     position: fixed;
     /* 화면 전체 너비를 쓰기 위해 fixed 또는 absolute 활용 */
     top: 95px;
