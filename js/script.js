@@ -570,3 +570,30 @@ var swiper = new Swiper(".lumen_message", {
 
 // AOS
 AOS.init();
+
+
+
+// ================= REVIEW SWIPER =================
+
+const reviewSwiper = new Swiper(".review_swiper", {
+    slidesPerView: 1.15,
+    spaceBetween: 18,
+    speed: 800,
+    watchOverflow: true,
+
+    navigation: {
+        nextEl: ".review_next",
+        prevEl: ".review_prev",
+    },
+
+    breakpoints: {
+        600: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+        },
+    },
+});
